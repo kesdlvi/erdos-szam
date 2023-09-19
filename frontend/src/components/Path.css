@@ -1,0 +1,100 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is on top of other content */
+}
+
+.path-content {
+    
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    width: 1000px;
+    height: 200px; 
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    text-align: left;
+    max-width: 100%; /* Set a maximum width to prevent horizontal overflow */
+    min-height: 60%; /* Set a minimum height to ensure vertical expansion */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds modal */
+    overflow: hidden;
+    box-shadow: 0 0 50px 10px #a6a6de;
+    
+
+}
+
+
+/* Path.css */
+/* Path.css */
+
+.node-list-container {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row; /* Display items horizontally */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .node-container {
+    display: flex;
+    align-items: center; /* Center vertically within the container */
+    width:120px;
+
+  }
+  
+  .node-name {
+    margin: auto;
+    
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  
+  .node-link {
+    width: 100px; /* Set the width of the line */
+    height: 1.5px; /* Adjust the height of the line as needed */
+    background-color: #000; /* Line color */
+    margin: 0 8px; /* Add spacing between the line and nodes */
+    background: linear-gradient(270deg, #fff1bf, #ec458d, #474ed7 ); /* Define your gradient colors */
+    background-size: 200% 100%; /* Adjust the background size to control the animation speed */
+    animation: gradientAnimation 5s linear infinite; /
+  }
+  
+  @media screen and (max-width: 768px) {
+    .node-list-container {
+      /* flex-direction: column; /* Stack items vertically on smaller screens */
+      
+    }
+  
+    .node-container {
+      margin-right: auto; /* Remove right margin to stack nodes vertically */
+    }
+    .node-name {
+        margin: auto;
+        
+        
+      }
+  
+    .node-link {
+      width: 50px; /* Make the line span the full width on smaller screens */
+      margin: 8px 0; /* Add spacing between the line and nodes */
+    }
+  }
+  

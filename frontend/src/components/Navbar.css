@@ -1,0 +1,48 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  padding: 5px 0;
+  text-align: right;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  padding-left: 20px; /* Adjust this value for spacing */
+}
+
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  display: inline-block;
+  padding: 0px 25px; /* Adjust this value for spacing */
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.navbar-item a:hover {
+  color: #b5c6e0;
+}
+
+.emoji-logo {
+  font-size: 24px; /* Adjust this value for the emoji size */
+}

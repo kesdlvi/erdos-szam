@@ -1,0 +1,16 @@
+{
+    "nodes": [
+        { "id": "64ee5e23b9c7cb765317ee44", "name":"Paul Erdos", "x": 400, "y": 100, "description": "The OG maths dude. A legend if you must", "ErdosNumber": 0},
+        { "id": "64ee5e5cb9c7cb765317ee46", "name": "Node 1", "x": 550, "y": 150, "description": "Description", "ErdosNumber": 1},
+        
+        { "id": "3", "name": "Kevin Espinas (kesdlvi)", "x": 1000, "y": 2000, "description": "jhkhkhjkj kjhk jk hk kj kj khj k hkj Just a guy who made this website", "ErdosNumber": 0}
+        
+
+    ],
+
+    "links": [
+       
+        
+        
+    ]
+}

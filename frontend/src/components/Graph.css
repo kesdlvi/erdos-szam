@@ -1,0 +1,527 @@
+.link {
+  stroke: #000000 ;
+  stroke-opacity: 0.6 !important;
+  stroke-width: 2px !important;
+}
+
+
+
+.node {
+  fill: #ff5733;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Aligns the flex items to the right */
+  align-items: center; /* Centers vertically */
+  height: 770px; /* Adjust as needed */
+}
+
+.character-container{
+  border: 1px solid white; 
+  display: flex;
+  flex-direction: column;
+  
+  background-color: white;
+  border-radius: 20px; 
+  width: 30%;
+  height: 745px;
+  overflow-y: scroll; 
+}
+
+.graph-function-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; /* Center horizontally within the container */
+  height: 745px; 
+  background-color: white;
+  border-radius: 20px; 
+  width: 68%
+
+}
+
+
+.svg-container {
+  /* border: 1px solid black;  */
+  border-radius: 20px;
+  width: 100%;
+  height: 725px;
+  margin-top: auto;
+  
+  
+}
+
+
+.description-text {
+  
+  color: #1a1a1a;
+  width: 95%;
+  margin: 15px;
+
+  
+  
+}
+
+.description-container {
+  text-align: left;
+  justify-content: center;
+  padding-bottom: 100px;
+  height: 100%;
+}
+
+.node-connection-and-toggle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 700px; */
+  width: 75%;
+  border-radius: 10px;
+  height: 50px;
+  background-color: #f4f4f4;
+  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  transition: height 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.button-and-node-count-container {
+  display: flex;
+  width:35%; 
+  justify-content: center;
+  padding-top: 5px;
+  height:35px
+}
+.node-count {
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+
+.arrow-button-up {
+  border-radius: 50%;
+  width: 35px; /* Adjust the size as needed */
+  height: 35px; /* Adjust the size as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px; /* Adjust the text size as needed */
+  color: black;
+  border: .1px solid transparent;
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding-bottom: 6px;
+  font-weight: lighter;
+
+  
+}
+
+.arrow-up {
+    border: solid black;
+    border-color: #575757;
+    border-width: 2px 0px 0px 2px;
+    border-radius: 2px;
+    padding: 5px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: 0.3s;
+    margin: 10px;
+    margin-top: 20px;
+    transition: border-width 0s ;
+}
+.arrow-button-up:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the shadow on hover */
+}
+
+
+
+
+
+
+
+.search-and-button-container {
+  display: flex;
+
+  align-items: flex-start;
+  width: 100%;
+  z-index: 5;
+  height: 80px;
+}
+
+
+
+.search-bar {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  background-color: white; /* Dark gray background color */
+  border: 1px solid #55595e; /* Dark gray border color */
+  border-radius: 8px; /* Slightly larger border radius */
+  padding: 12px 16px; /* Increased padding for height and width */
+  width: 185px !important; /* Increased width */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  justify-content: center;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 15px;
+  margin-left:15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-style: bold;
+}
+
+.search-bar input {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+  flex: 1;
+  padding: 8px; /* Increased padding */
+  font-size: 20px; /* Increased font size */
+  color: black; /* Light gray text color */
+  border: none;
+  outline: none;
+  
+  background-color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: black; /* Dark gray placeholder color */
+}
+
+
+
+.search-bar-container {
+  width: 100%;
+  height: 280px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.search-results {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+   /* Change position to relative */
+  margin: auto;
+  margin-top: 0px;
+  margin-left: 15px;
+  list-style: none;
+  padding: 0;
+  width: 190px; /* Adjust the width to match the search bar */
+  max-height: 170px; /* Adjust the max height */
+  height: 170px;
+  background-color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.search-results-to-from {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+   /* Change position to relative */
+  margin: auto;
+  margin-top: 2px;
+  margin-left: 0px;
+  list-style: none;
+  padding: 0;
+  width: 190px; /* Adjust the width to match the search bar */
+  max-height: 170px; /* Adjust the max height */
+  height: 170px;
+  background-color: #f4f4f4;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.search-result {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+  padding: 9px 16px 9px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: black;
+  width: 100%; /* Make the search results span the width of the dropdown */
+  text-align: left; /* Center the text horizontally */
+  border-radius: 8px;
+}
+
+.search-result:hover {
+  background-color: #f2f2f2; /* Light gray color */
+}
+
+.fullscreen-button-container {
+  width: 90px;
+  margin: auto;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.fullscreen-button {
+  background-color: transparent;
+  color: black;
+  padding: 5px 11px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 23px; /* Adjust font size as needed */
+  display: flex;
+  flex-direction: row;
+  align-items: right; /* Place items at the bottom */
+  justify-content: flex-end; /* Place items at the right */
+  margin: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  
+}
+.fullscreen-button:hover {
+  background-color: #f2f2f2;
+  transition: .5s;
+}
+
+
+/* Node connection */
+
+.button-containers {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+  
+  height: 50px;
+}
+
+
+
+.bottom-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: auto;
+  width: 100px;
+  justify-content: left;
+  position: absolute;
+
+
+}
+
+
+
+.node-from {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; /* Dark gray background color */
+  border: 1px solid #55595e; /* Dark gray border color */
+  border-radius: 8px; /* Slightly larger border radius */
+  padding: 12px 16px; /* Increased padding for height and width */
+  width: 185px !important; /* Increased width */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  justify-content: center;
+  font-size: 20px;
+  margin: auto;
+  color: black;
+  font-style: bold;
+  justify-content: left;
+  align-items: left;
+  z-index: 2;
+}
+
+.node-from {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+  flex: 1;
+  padding: 8px; /* Increased padding */
+  font-size: 20px; /* Increased font size */
+  color: black; /* Light gray text color */
+  border: none;
+  outline: none;
+  z-index: 2;
+  
+  background-color: #fff;
+}
+
+.node-from input::placeholder {
+  color: black; /* Dark gray placeholder color */
+}
+
+.node-to {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; /* Dark gray background color */
+  border: 1px solid #55595e; /* Dark gray border color */
+  border-radius: 8px; /* Slightly larger border radius */
+  padding: 12px 16px; /* Increased padding for height and width */
+  width: 185px !important; /* Increased width */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  justify-content: center;
+  font-size: 20px;
+  margin: auto;
+  color: black;
+  font-style: bold;
+  
+}
+
+.node-to {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-style: bold;
+  flex: 1;
+  padding: 8px; /* Increased padding */
+  font-size: 20px; /* Increased font size */
+  color: black; /* Light gray text color */
+  border: none;
+  outline: none;
+  z-index: 2;
+  
+  background-color: #fff;
+}
+
+.node-tp input::placeholder {
+  color: black; /* Dark gray placeholder color */
+}
+
+
+
+
+.Node-link-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: black;
+}
+
+.button-line {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: relative;
+
+
+}
+
+.horizontal-line {
+  height: 2px; /* Set the height of the line */
+  background-color: #000; /* Set the color of the line */
+  margin: 20px 0; /* Adjust the margin to position the line vertically */
+  width: 190px;
+  z-index: 0;
+}
+
+
+
+/* button w/ animation */
+#animateButton {
+  background-color: #40c9ff; /* Button background color */
+  color: white; /* Button text color */
+  padding: 3px 7px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Bouncing animation and color change */
+  margin: 10px 0;
+  /* Use a pseudo-element to add an arrow placeholder */
+  justify-content: left;
+  position:absolute;
+  z-index: 2;
+}
+
+/* Arrow placeholder */
+
+
+/* Hover effect */
+#animateButton:hover {
+  background-color: #e81cff; /* Change background color on hover */
+  transform: scale(1.2); /* Move the button up slightly on hover */
+}
+
+/* Hover effect for the arrow */
+#animateButton:hover::before {
+  transform: translateX(5px); /* Move the arrow to the right on hover */
+}
+
+.animate-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: left 5s linear; /* Add a transition for smooth movement */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+
+}
+
+.highlighted-link {
+  stroke: red; /* Set the link color to red */
+  stroke-width: 2; /* Set the link width to 2 pixels */
+}
+
+.highlighted-node circle {
+  fill: red; /* Set the node circle fill color to red */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track .search-results{
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #60696b;
+}
+
+/* read more window */
+
+.read-more-modal {
+  color: #e91fa8
+}
+
+.read-more-modal:hover {
+  color: #b9dfee;
+  transition-duration: .5s;
+  cursor:pointer;
+}
+
+
+
+
+/* Full screen svg */
+
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+

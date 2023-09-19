@@ -1,0 +1,85 @@
+.info-section {
+    height: 850px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-section h1 {
+    cursor: pointer;
+    color: #b5c6e0;
+    
+  }
+.info-section h1:hover {
+  color: #ebf4f5;
+  transition-duration: .5s;
+}
+  
+  /* Modal styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal is on top of other content */
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    width: 1100px;
+    height: 600px; 
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    text-align: left;
+    max-width: 80%; /* Set a maximum width to prevent horizontal overflow */
+    min-height: 60%; /* Set a minimum height to ensure vertical expansion */
+    overflow-y: auto; /* Add a vertical scrollbar if content exceeds modal */
+    box-shadow: 0 0 50px 10px #a6a6de;
+  }
+  
+  /* Close button styles */
+  .modal-content button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+    
+    
+    
+  }
+  
+  /* Close button hover effect */
+  .modal-content button:hover {
+    background-color: #557c93;
+    transition-duration: 5s;
+  }
+
+  .modal-about {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #4f4f4f ;
+    
+  }
+
+  .modal-content h2{
+    margin: auto;
+    margin-bottom: 45px;
+    
+  }
+
+
+
+  
