@@ -8,7 +8,7 @@ const Request = () => {
 
   // Inputs
   const [name, setName] = useState('');
-  const [ErdosNumber, setErdosNumber] = useState(0);
+  const [ErdosNumber, setErdosNumber] = useState(null);
   const [description, setDescription] = useState('');
   const [occupation, setOccupation] = useState('');
   const [error, setError] = useState(null);
@@ -114,7 +114,7 @@ const Request = () => {
         console.log("Two nodes Name", source, target)
         setName('');
         setDescription('');
-        setErdosNumber(0);
+        setErdosNumber(null);
         setOccupation('');
         setCoAuthor('');         
     }
@@ -205,7 +205,11 @@ const Request = () => {
 
   return (
     <div>
-      <div>Request</div>
+      <div className='request-top'>
+        <a href="/">🏠</a>
+        
+        
+      </div>
 
       <form className="request-container" onSubmit={createNode}>
         <div className="node-header">
@@ -214,7 +218,7 @@ const Request = () => {
 
         <div className="node-link-container">
           <div className="node-information">
-            <div className="form-title">request</div>
+            <div className="form-title">Author Info</div>
 
             <input
               className="node-input"
@@ -234,8 +238,9 @@ const Request = () => {
               className="node-input"
               type="number"
               placeholder="Their Erdos Number"
-              onChange={(e) => setErdosNumber(parseInt(e.target.value, 10))}
+              onChange={(e) => setErdosNumber(Math.max(1, parseInt(e.target.value, 10)))}
               value={ErdosNumber}
+              min = '1'
             />
             <textarea
               rows={4}
@@ -256,14 +261,16 @@ const Request = () => {
                 {showLinkInput && <span>&#x2713;</span>}
               </button>
               <h2>Collaborator?</h2>
+              
             </div>
 
             {showLinkInput && (
-              <div>
-                <h2>Co-Author?</h2>
+              <div className='coauthor-input'>
+                
                 <input
+                  className='node-input'
                   type="text"
-                  placeholder=""
+                  placeholder="CoAuthor"
                   onChange={(e) => {
                     const inputValue = e.target.value;
                     setCoAuthor(inputValue);
@@ -293,6 +300,17 @@ const Request = () => {
                 )}
               </div>
             )}
+            <div className="link-input">
+              <button
+                type="button"
+                className={showLinkInput ? 'checked' : ''}
+                //onClick={handleShowLinkInput} // create another state for papers
+              >
+                {/* {showLinkInput && <span>&#x2713;</span>} */}
+              </button>
+              <h2>Notable Works?</h2>
+              
+            </div>
           </div>
         </div>
 

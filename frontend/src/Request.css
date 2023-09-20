@@ -1,3 +1,13 @@
+#root {
+    height: 800px;
+}
+
+.request-top {
+    font-size: 25px;
+    margin-bottom: 10px;
+    
+}
+
 .request-container {
     background-color: #fff;
     border: 1px solid #ccc;
@@ -6,9 +16,10 @@
     width: 75%; 
     height: 705px;
     position: relative;
-    margin: 150px auto;
+    margin: auto;
     border-radius: 20px; /* Add this line to round the corners */
     color: black;
+    box-shadow: 0 0 30px 10px #a6a6de;
     
 }
 
@@ -121,6 +132,13 @@ textarea {
 
 .no-resize {
     resize: none
+}
+
+/* right side  */
+
+.coauthor-input {
+    display: flex;
+    margin-bottom: 16px;
 }
 
 .submit-button {
