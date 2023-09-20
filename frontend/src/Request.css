@@ -141,6 +141,17 @@ textarea {
     margin-bottom: 16px;
 }
 
+.notable-works-input {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.website-input {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+
 .submit-button {
     border-radius: 8px;
     border: 1px solid transparent;

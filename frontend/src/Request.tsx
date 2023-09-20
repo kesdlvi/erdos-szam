@@ -3,8 +3,7 @@ import { useState, useEffect } from 'react';
 import './Request.css';
 
 const Request = () => {
-  
-  const [showLinkInput, setShowLinkInput] = useState(false);
+ 
 
   // Inputs
   const [name, setName] = useState('');
@@ -12,10 +11,18 @@ const Request = () => {
   const [description, setDescription] = useState('');
   const [occupation, setOccupation] = useState('');
   const [error, setError] = useState(null);
-  const [CoAuthor, setCoAuthor] = useState('');
+  
   const [coAuthorSearchResults, setCoAuthorSearchResults] = useState([]);
   const [filteredResults, setFilteredResults] = useState([]);
   const [currentNodesInDB, setCurrentNodesInDB] = useState([]);
+
+   //checkbox input fields
+   const [showLinkInput, setShowLinkInput] = useState(false);
+   const [showNotableWorks, setShowNotableWorks] = useState(false);
+   const [CoAuthor, setCoAuthor] = useState('');
+   const [notableWorks, setNotableWorks] = useState('');
+   const [showWebsite, setShowWebsite] = useState(false);
+   const [website, setWebsite] = useState('');
 
   // link inputs
   const [source, setSource] = useState('')
@@ -28,6 +35,14 @@ const Request = () => {
   const handleShowLinkInput = () => {
     setShowLinkInput(!showLinkInput);
   };
+
+  const handleShowNotableWorks = () => {
+    setShowNotableWorks(!showNotableWorks);
+  }
+
+  const handleShowWebsite = () => {
+    setShowWebsite(!showWebsite);
+  }
 
   const nodeFetchAndAppend = () => {
     fetch('http://localhost:4000/api/commands')
@@ -182,12 +197,7 @@ const Request = () => {
       if (response.ok) {
         setError(null);
         console.log('Link added', json);
-        // setName('');
-        // setDescription('');
-        // setErdosNumber(0);
-        // setOccupation('');
-        // setCoAuthor('');
-        //handleLinkCreation; 
+        
       }
   }
 
@@ -303,14 +313,55 @@ const Request = () => {
             <div className="link-input">
               <button
                 type="button"
-                className={showLinkInput ? 'checked' : ''}
-                //onClick={handleShowLinkInput} // create another state for papers
+                className={showNotableWorks ? 'checked' : ''}
+                onClick={handleShowNotableWorks} // create another state for papers
               >
-                {/* {showLinkInput && <span>&#x2713;</span>} */}
+                {showNotableWorks && <span>&#x2713;</span>}
               </button>
               <h2>Notable Works?</h2>
               
             </div>
+            {showNotableWorks && ( 
+              <div className='notable-works-input'>
+                  <input
+                  className='node-input'
+                  type="text"
+                  placeholder="Link to work"
+                  onChange={(e) => {
+                    const inputValue = e.target.value;
+                    setNotableWorks(inputValue)
+                  }}
+                  value={notableWorks}
+                />
+              </div>
+            )}
+
+            <div className="link-input">
+              <button
+                type="button"
+                className={showWebsite ? 'checked' : ''}
+                onClick={handleShowWebsite} // create another state for papers
+              >
+                {showWebsite && <span>&#x2713;</span>}
+              </button>
+              <h2>Website?</h2>
+              
+            </div>
+            {showWebsite && (
+              <div className='website-input'>
+              <input
+              className='node-input'
+              type="text"
+              placeholder="Website Link"
+              onChange={(e) => {
+                const inputValue = e.target.value;
+                setWebsite(inputValue)
+              }}
+              value={website}
+            />
+          </div>
+            )}
+
           </div>
         </div>
 
