@@ -88,6 +88,30 @@ const Request = () => {
       
   };
 
+  // RENDER SEARCH SUGGESTIONS
+  const renderCoAuthorSuggestions = () => {
+    if(CoAuthor == '') {
+      return null; 
+    }
+    return (
+      <ul className="search-results-request">
+        {filteredResults.map((suggestion) => (
+          <li
+            key={suggestion._id}
+            onClick={() => {
+              setCoAuthor(suggestion.name);
+              setCoAuthorSearchResults([]);
+            }}
+            className="search-result"
+          >
+            {suggestion.name}
+            
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
   // Node Creation
 
   const createNode = async (e) => {
@@ -126,7 +150,7 @@ const Request = () => {
         setSource(CoAuthor)
         setTarget(name)
         
-        console.log("Two nodes Name", source, target)
+        
         setName('');
         setDescription('');
         setErdosNumber(null);
@@ -147,7 +171,7 @@ const Request = () => {
             await new Promise(res => setTimeout(res, uploadTime))
             const recentNodeId = await getNodeByName(currentNodesInDB, target);
             const recentCoAuthorId = await getNodeByName(currentNodesInDB, source);
-            console.log("Two nodes id", recentNodeId._id, recentCoAuthorId._id)
+            
             
             // add prompted creation state to prevent premature creation
             if (recentNodeId && recentCoAuthorId) {
@@ -162,7 +186,7 @@ const Request = () => {
 
         } catch (error) {
             console.error("Error in nodeFetchandAppend", error)
-            console.log("thing")
+            
         }
         
     }
@@ -202,7 +226,6 @@ const Request = () => {
   }
 
     const getNodeByName = (nodes, coAuthorName:string) => {
-        console.log("The current nodes", currentNodesInDB, " The node you want to look for", coAuthorName)
         return nodes.find((node) => node.name.toLowerCase() === coAuthorName.toLowerCase());
       }
 
@@ -214,7 +237,7 @@ const Request = () => {
 
 
   return (
-    <div>
+    <div className='request-root'>
       <div className='request-top'>
         <a href="/">🏠</a>
         
@@ -278,7 +301,7 @@ const Request = () => {
               <div className='coauthor-input'>
                 
                 <input
-                  className='node-input'
+                  className='node-input-right'
                   type="text"
                   placeholder="CoAuthor"
                   onChange={(e) => {
@@ -291,23 +314,7 @@ const Request = () => {
                   }}
                   value={CoAuthor}
                 />
-                {CoAuthor && filteredResults.length > 0 && (
-                  <ul className="search-results">
-                    {filteredResults.map((suggestion) => (
-                      <li
-                        key={suggestion._id}
-                        onClick={() => {
-                          setCoAuthor(suggestion.name);
-                          setCoAuthorSearchResults([]);
-                        }}
-                        className="search-result"
-                      >
-                        {suggestion.name}
-                        
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                {renderCoAuthorSuggestions()}
               </div>
             )}
             <div className="link-input">
@@ -324,7 +331,7 @@ const Request = () => {
             {showNotableWorks && ( 
               <div className='notable-works-input'>
                   <input
-                  className='node-input'
+                  className='node-input-right'
                   type="text"
                   placeholder="Link to work"
                   onChange={(e) => {
@@ -350,7 +357,7 @@ const Request = () => {
             {showWebsite && (
               <div className='website-input'>
               <input
-              className='node-input'
+              className='node-input-right'
               type="text"
               placeholder="Website Link"
               onChange={(e) => {

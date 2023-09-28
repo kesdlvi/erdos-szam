@@ -1,5 +1,7 @@
-#root {
+.request-root {
     height: 800px;
+    text-align: center;
+    width: 100%;
 }
 
 .request-top {
@@ -125,6 +127,15 @@ textarea {
     border-radius: 5px;
     font-size: 16px;
 }
+.node-input-right {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #404040; /* Darker input background color */
+    color: white; /* Light text color */
+    border-radius: 5px;
+    font-size: 16px;
+}
 
 /* Style for the larger description input */
 textarea {
@@ -140,6 +151,7 @@ textarea {
 .coauthor-input {
     display: flex;
     margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .notable-works-input {
@@ -173,3 +185,25 @@ textarea {
     outline: 4px auto -webkit-focus-ring-color;
   }
   
+  /* search results */
+
+  .search-results-request {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-style: bold;
+     /* Change position to relative */
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+    list-style: none;
+    padding: 0;
+    width: 250px; /* Adjust the width to match the search bar */
+    max-height: 125px; /* Adjust the max height */
+    height: 170px;
+    background-color: white;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
